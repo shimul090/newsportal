@@ -1,0 +1,35 @@
+
+
+.info-box {
+    box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+    border-radius: 0.25rem;
+    min-height: 80px;
+    background-color: #343a40;
+    margin-bottom: 1rem;
+    font-size: 15px;
+    display: inline-flex;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.info-box-icon {
+    border-radius: .25rem;
+    align-items: center;
+    display: flex;
+    font-size: 1.875rem;
+    justify-content: center;
+    text-align: center;
+    height: 63px;
+    width: 70px;
+    color: #fff;
+}
+
+.info-box-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.8;
+    flex: 1;
+    padding: 0 10px;
+    color: #fff;
+}

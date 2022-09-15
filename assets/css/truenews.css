@@ -1,0 +1,11 @@
+.container .top-add {
+	overflow: hidden;
+	margin: 10px 0;
+}
+
+.container #breaking-news {
+    background-color: #fff;
+    overflow: hidden;
+    margin: 0px 0px 10px 0px;
+    border-radius: 3px;
+}
