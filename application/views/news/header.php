@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<!--title-->
-    <title>News Press | News & Blog Template</title>
+    <title>TrueNews | Always in Search of Truth</title>
 
 	<!--CSS-->
 	<link href="<?php echo base_url(); ?>assets/css/truenews.css" rel="stylesheet">
@@ -79,7 +79,7 @@
 							</a>
 						</div>
 						<div class="navbar-right">
-							<a href="#"><img class="img-responsive" src="images/post/google-add.jpg" alt="" /></a>
+							<a href="#"><img class="img-responsive" src="<?php echo base_url(); ?>assets/news/images/post/google-add.jpg" alt="" /></a>
 						</div>
 					</div>
 				</div>

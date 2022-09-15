@@ -41,12 +41,14 @@ class News extends CI_Controller {
 		$data['categories'] = $this->Dashboard_model->get_category_list();
 		$data['posts'] = $this->News_model->get_news($category_id);
 		$this->load->view('news/header', $data);
-		$this->load->view('news/news_category');
+		$this->load->view('news/news_category', $data);
 		$this->load->view('news/footer');
 	}
 
 	public function news_details($con = '') {
-		$this->load->view('news/header');
+		$data = array();
+		$data['categories'] = $this->Dashboard_model->get_category_list();
+		$this->load->view('news/header', $data);
 		$this->load->view('news/news_details');
 		$this->load->view('news/footer');
 	}
