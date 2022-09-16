@@ -44,7 +44,7 @@ class News extends CI_Controller {
 		$data = array();
 		$category_id = $this->uri->segment(3, 0);
 		$data['categories'] = $this->Dashboard_model->get_category_list();
-		$data['posts'] = $this->News_model->get_news($category_id);
+		$data['news'] = $this->News_model->get_news_by_category($category_id);
 		$this->load->view('news/header', $data);
 		$this->load->view('news/news_category', $data);
 		$this->load->view('news/footer');
@@ -52,6 +52,7 @@ class News extends CI_Controller {
 
 	public function news_details($id) {
 		$data = array();
+		$data['categories'] = $this->Dashboard_model->get_category_list();
 		$data['news'] = $this->News_model->get_news($id);
 		$this->load->view('news/header', $data);
 		$this->load->view('news/news_details', $data);

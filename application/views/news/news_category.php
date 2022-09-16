@@ -11,6 +11,12 @@
     	border-radius: 3px;
 	}
 
+	.img-responsive {
+		display: block;
+		width: 100%;
+		height: 200px;
+	}
+
 	</style>
 
 		<div class="container">
@@ -25,93 +31,79 @@
 										<div class="section lifestyle-section">
 											<h1 class="section-title"><?php echo $this->uri->segment(4); ?></h1>
 											<div class="row">
-												<div class="col-md-4">
-													<div class="post medium-post">
-														<div class="entry-header">
-															<div class="entry-thumbnail">
-																<img class="img-responsive" src="<?php echo base_url(); ?>assets/news/images/post/lifestyle/3.jpg" alt="" />
+												<?php if (isset($news[0])) {?>
+													<div class="col-md-4">
+														<div class="post medium-post">
+															<div class="entry-header">
+																<div class="entry-thumbnail">
+																	<img class="img-responsive" src="<?php echo base_url(); ?>assets/img/<?php echo $news[0]['image']; ?>" alt="" />
+																</div>
+															</div>
+															<div class="post-content">
+																<div class="entry-meta">
+																	<ul class="list-inline">
+																		<li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> <?php echo substr($news[0]['created_at'], 0, 10); ?> </a></li>
+																		<li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+																		<li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+																	</ul>
+																</div>
+																<h2 class="entry-title">
+																	<?php echo '<a href="' . site_url('news/news_details/') . $news[0]['id'] . '">' . $news[0]['title'] . '</a>'; ?>
+																</h2>
 															</div>
 														</div>
-														<div class="post-content">
-															<div class="entry-meta">
-																<ul class="list-inline">
-																	<li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2015 </a></li>
-																	<li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
-																	<li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
-																</ul>
+													</div>
+												<?php }?>
+												<?php if (isset($news[1])) {?>
+													<div class="col-md-8">
+														<div class="post medium-post">
+															<div class="entry-header">
+																<div class="entry-thumbnail">
+																	<img class="img-responsive" src="<?php echo base_url(); ?>assets/img/<?php echo $news[1]['image']; ?>" alt="" />
+																</div>
 															</div>
-															<h2 class="entry-title">
-																<a href="news-details.html">18 Great Performances in Mediocre Movies in 2015</a>
-															</h2>
-														</div>
-													</div><!--/post-->
-												</div>
-												<div class="col-md-8">
-													<div class="post medium-post">
-														<div class="entry-header">
-															<div class="entry-thumbnail">
-																<img class="img-responsive" src="<?php echo base_url(); ?>assets/news/images/post/lifestyle/3.jpg" alt="" />
+															<div class="post-content">
+																<div class="entry-meta">
+																	<ul class="list-inline">
+																		<li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> <?php echo substr($news[1]['created_at'], 0, 10); ?> </a></li>
+																		<li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+																		<li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+																	</ul>
+																</div>
+																<h2 class="entry-title">
+																	<?php echo '<a href="' . site_url('news/news_details/') . $news[1]['id'] . '">' . $news[1]['title'] . '</a>'; ?>
+																</h2>
 															</div>
-														</div>
-														<div class="post-content">
-															<div class="entry-meta">
-																<ul class="list-inline">
-																	<li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2015 </a></li>
-																	<li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
-																	<li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
-																</ul>
-															</div>
-															<h2 class="entry-title">
-																<a href="news-details.html">How the stars celebrated Christmas on Instagram</a>
-															</h2>
-														</div>
-													</div><!--/post-->
-												</div>
+														</div><!--/post-->
+													</div>
+												<?php }?>
 											</div>
 
 											<div class="row">
-												<div class="col-md-6">
-													<div class="post medium-post">
-														<div class="entry-header">
-															<div class="entry-thumbnail">
-																<img class="img-responsive" src="<?php echo base_url(); ?>assets/news/images/post/lifestyle/3.jpg" alt="" />
-															</div>
+												<?php if (count($news) > 2) {
+	for ($i = 2; $i < count($news); $i++) {?>
+														<div class="col-md-6">
+															<div class="post medium-post">
+																<div class="entry-header">
+																	<div class="entry-thumbnail">
+																		<img class="img-responsive" src="<?php echo base_url(); ?>assets/img/<?php echo $news[$i]['image']; ?>" alt="" />
+																	</div>
+																</div>
+																<div class="post-content">
+																	<div class="entry-meta">
+																		<ul class="list-inline">
+																			<li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> <?php echo substr($news[$i]['created_at'], 0, 10); ?> </a></li>
+																			<li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+																			<li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+																		</ul>
+																	</div>
+																	<h2 class="entry-title">
+																		<?php echo '<a href="' . site_url('news/news_details/') . $news[$i]['id'] . '">' . $news[$i]['title'] . '</a>'; ?>
+																	</h2>
+																</div>
+															</div><!--/post-->
 														</div>
-														<div class="post-content">
-															<div class="entry-meta">
-																<ul class="list-inline">
-																	<li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2015 </a></li>
-																	<li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
-																	<li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
-																</ul>
-															</div>
-															<h2 class="entry-title">
-																<a href="news-details.html">How the stars celebrated Christmas on Instagram</a>
-															</h2>
-														</div>
-													</div><!--/post-->
-												</div>
-												<div class="col-md-6">
-													<div class="post medium-post">
-														<div class="entry-header">
-															<div class="entry-thumbnail">
-																<img class="img-responsive" src="<?php echo base_url(); ?>assets/news/images/post/lifestyle/3.jpg" alt="" />
-															</div>
-														</div>
-														<div class="post-content">
-															<div class="entry-meta">
-																<ul class="list-inline">
-																	<li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> Nov 15, 2015 </a></li>
-																	<li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
-																	<li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
-																</ul>
-															</div>
-															<h2 class="entry-title">
-																<a href="news-details.html">How the stars celebrated Christmas on Instagram</a>
-															</h2>
-														</div>
-													</div><!--/post-->
-												</div>
+												<?php }}?>
 											</div>
 										</div><!--/.lifestyle -->
 									</div><!--/.left-content-->

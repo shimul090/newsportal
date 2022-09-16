@@ -30,9 +30,16 @@
 								<div class="col-md-12 col-sm-12">
 									<div class="left-content">
 										<div class="section lifestyle-section">
-											<h1 class="section-title"><?php echo $news['category']; ?></h1>
+											<h1 class="section-title"><?php echo $news['category_name']; ?></h1>
 											<h2><?php echo $news['title']; ?></h2>
-											<div class="post medium-post">
+											<div class="entry-meta">
+														<ul class="list-inline">
+															<li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> <?php echo $news['created_at']; ?> </a></li>
+															<li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
+															<li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
+														</ul>
+													</div>
+											<div class="post">
 												<div class="entry-header">
 													<div class="entry-thumbnail">
 														<figure class="figure">
@@ -42,13 +49,6 @@
 													</div>
 												</div>
 												<div class="post-content">
-													<div class="entry-meta">
-														<ul class="list-inline">
-															<li class="publish-date"><a href="#"><i class="fa fa-clock-o"></i> <?php echo $news['created_at']; ?> </a></li>
-															<li class="views"><a href="#"><i class="fa fa-eye"></i>15k</a></li>
-															<li class="loves"><a href="#"><i class="fa fa-heart-o"></i>278</a></li>
-														</ul>
-													</div>
 													<p> <?php echo $news['description']; ?> </p>
 												</div>
 											</div><!--/post-->
@@ -57,30 +57,6 @@
 								</div>
 							</div>
 						</div><!--/#site-content-->
-					</div>
-					<div class="col-md-3 col-sm-4">
-						<div id="sitebar">
-							<div class="widget">
-								<h1 class="section-title title">Related News</h1>
-								<ul class="post-list">
-									<li>
-										<div class="post small-post">
-											<div class="entry-header">
-												<div class="entry-thumbnail">
-													<img class="img-responsive" src="<?php echo base_url(); ?>assets/news/images/post/rising/1.jpg" alt="" />
-												</div>
-											</div>
-											<div class="post-content">
-												<div class="video-catagory"><a href="#">World</a></div>
-												<h2 class="entry-title">
-													<a href="news-details.html">3 students arrested after body-slamming principal</a>
-												</h2>
-											</div>
-										</div><!--/post-->
-									</li>
-								</ul>
-							</div><!--/#widget-->
-						</div><!--/#sitebar-->
 					</div>
 				</div>
 			</div><!--/.section-->

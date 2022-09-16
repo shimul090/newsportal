@@ -6,14 +6,26 @@ class News_model extends CI_Model {
 		$this->table = 'news';
 	}
 
-	public function get_news($id = '') {
-		$this->db->select('*');
-		$this->db->from($this->table);
-		$this->db->where('id', $id);
+	public function get_news($id) {
+		$this->db->select('news.id, category_name, title, description, image, image_caption, created_at');
+		$this->db->from('news');
+		$this->db->join('truenews_category', 'news.category = truenews_category.id');
+		$this->db->where('news.id', $id);
 		$this->db->where('is_active = 1');
 		$this->db->order_by('id', 'DESC');
 
 		return $this->db->get()->row_array();
+	}
+
+	public function get_news_by_category($category_id = '') {
+		$this->db->select('news.id, category_name, title, description, image, image_caption, created_at');
+		$this->db->from('news');
+		$this->db->join('truenews_category', 'news.category = truenews_category.id');
+		$this->db->where('news.category', $category_id);
+		$this->db->where('is_active = 1');
+		$this->db->order_by('id', 'DESC');
+
+		return $this->db->get()->result_array();
 	}
 
 	public function feature_news() {

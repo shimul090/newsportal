@@ -3,12 +3,6 @@
 				padding-left: 10%;
 			}
 
-			.row [class*="col-"] {
-			    float: none;
-			    display: table-cell;
-			    vertical-align: top;
-			}
-
 			.img-responsive {
 				display: block;
 				width: 100%;
@@ -58,7 +52,7 @@ foreach ($breaking_news as $breaking) {
 																</ul>
 															</div>
 															<h2 class="entry-title">
-																<?php echo '<a href="news/news_details/"' . $news['id'] . '">' . $news['title'] . '</a>'; ?>
+																<?php echo '<a href="news_details/' . $news['id'] . '">' . $news['title'] . '</a>'; ?>
 															</h2>
 														</div>
 													</div><!--/post-->
