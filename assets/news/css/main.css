@@ -873,6 +873,12 @@ img.mfp-img {
 	margin-top:10px;
 }
 
+.post.medium-post {
+    height: 350px;
+}
+
+
+
 .catagory {
 	position:absolute;
 	top:20px;

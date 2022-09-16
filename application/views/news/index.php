@@ -8,6 +8,12 @@
 			    display: table-cell;
 			    vertical-align: top;
 			}
+
+			.img-responsive {
+				display: block;
+				width: 100%;
+				height: 200px;
+			}
 		</style>
 		<div class="container">
 			<div id="breaking-news">
@@ -75,7 +81,7 @@ foreach ($breaking_news as $breaking) {
 										<div class="post small-post">
 											<div class="entry-header">
 												<div class="entry-thumbnail">
-													<img class="img-responsive" src="<?php echo base_url(); ?>assets/news/images/post/rising/1.jpg" alt="" />
+													<img class="img-responsive" src="<?php echo base_url(); ?>assets/imag/images/post/rising/1.jpg" alt="" />
 												</div>
 											</div>
 											<div class="post-content">
@@ -106,7 +112,7 @@ foreach ($breaking_news as $breaking) {
 															<div class="post medium-post">
 																<div class="entry-header">
 																	<div class="entry-thumbnail">
-																		<img class="img-responsive" src="images/post/lifestyle/2.jpg" alt="" />
+																		<img class="img-responsive" src="<?php echo base_url(); ?>assets/img/<?php echo $national['image'] ?>" alt="" />
 																	</div>
 																</div>
 																<div class="post-content">
@@ -174,7 +180,7 @@ foreach ($breaking_news as $breaking) {
 															<div class="post medium-post">
 																<div class="entry-header">
 																	<div class="entry-thumbnail">
-																		<img class="img-responsive" src="images/post/lifestyle/2.jpg" alt="" />
+																		<img class="img-responsive" src="<?php echo base_url(); ?>assets/img/<?php echo $international['image'] ?>" alt="" />
 																	</div>
 																</div>
 																<div class="post-content">
@@ -240,7 +246,7 @@ foreach ($breaking_news as $breaking) {
 															<div class="post medium-post">
 																<div class="entry-header">
 																	<div class="entry-thumbnail">
-																		<img class="img-responsive" src="images/post/lifestyle/2.jpg" alt="" />
+																		<img class="img-responsive" src="<?php echo base_url(); ?>assets/img/<?php echo $sports['image'] ?>" alt="" />
 																	</div>
 																</div>
 																<div class="post-content">

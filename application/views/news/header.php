@@ -75,11 +75,8 @@
 							</button>
 
 							<a class="navbar-brand" href="<?php echo site_url('news/index'); ?>">
-								<img class="main-logo img-responsive" src="<?php echo base_url(); ?>assets/news/images/presets/preset1/logo.png" alt="logo">
+								<img class="main-logo" src="<?php echo base_url(); ?>assets/news/images/presets/preset1/logo.png" alt="logo">
 							</a>
-						</div>
-						<div class="navbar-right">
-							<a href="#"><img class="img-responsive" src="<?php echo base_url(); ?>assets/news/images/post/google-add.jpg" alt="" /></a>
 						</div>
 					</div>
 				</div>
