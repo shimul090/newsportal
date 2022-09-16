@@ -13,8 +13,13 @@ class News extends CI_Controller {
 		$data = array();
 
 		$data['categories'] = $this->Dashboard_model->get_category_list();
+		$data['breaking_news'] = $this->News_model->breaking_news();
+		$data['top_news'] = $this->News_model->get_top_news();
+		$data['national_news'] = $this->News_model->get_national_news();
+		$data['international_news'] = $this->News_model->get_international_news();
+		$data['sports_news'] = $this->News_model->get_sports_news();
 		$this->load->view('news/header', $data);
-		$this->load->view('news/index');
+		$this->load->view('news/index', $data);
 		$this->load->view('news/footer');
 
 	}
@@ -45,11 +50,11 @@ class News extends CI_Controller {
 		$this->load->view('news/footer');
 	}
 
-	public function news_details($con = '') {
+	public function news_details($id) {
 		$data = array();
-		$data['categories'] = $this->Dashboard_model->get_category_list();
+		$data['news'] = $this->News_model->get_news($id);
 		$this->load->view('news/header', $data);
-		$this->load->view('news/news_details');
+		$this->load->view('news/news_details', $data);
 		$this->load->view('news/footer');
 	}
 
