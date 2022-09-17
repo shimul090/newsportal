@@ -63,32 +63,13 @@ if ($this->session->userdata('userId') == "") {
 <nav class="navbar navbar-expand-md bg-light justify-content-center">
   		<ul class="navbar-nav">
   			<li class="nav-item">
-      			<a class="nav-link" href="<?php echo base_url('econdata/index'); ?>">Home</a>
+      			<a class="nav-link" href="<?php echo base_url('news/index'); ?>">Home</a>
     		</li>
-    		<li class="nav-item">
-      			<a class="nav-link" href="<?php echo site_url('news/national'); ?>">National</a>
-    		</li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="#">International</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="<?php echo site_url('econdata/w_avg_interest'); ?>">Interest Rate Spread</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="<?php echo site_url('econdata/inflation'); ?>">Inflation</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="<?php echo site_url('econdata/nationalincome'); ?>">Nationalincome</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="<?php echo site_url('econdata/moneysupply'); ?>">Money Supply</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="<?php echo site_url('econdata/bankdeposit'); ?>">Bank Credit and Deposit</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="<?php echo site_url('econdata/press_lcimport_timesr'); ?>">Import Lc</a>
-		    </li>
+    		<?php if ($this->session->userdata('isUserLoggedIn') && $this->session->userdata('userRole') == 'admin') {?>
+	    		<li class="nav-item">
+	      			<a class="nav-link" href="<?php echo site_url('dashboards/index'); ?>">Dashboard</a>
+	    		</li>
+	    	<?php }?>
   		</ul>
 </nav>
 

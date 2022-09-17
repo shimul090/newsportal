@@ -38,7 +38,7 @@
 			<div class="container">
 				<div id="date-time"></div>
 				<div id="topbar-right">
-					<div class="dropdown language-dropdown">
+					<!--<div class="dropdown language-dropdown">
 						<a data-toggle="dropdown" href="#"><span class="change-text">En</span> <i class="fa fa-angle-down"></i></a>
 						<ul class="dropdown-menu language-change">
 							<li><a href="#">EN</a></li>
@@ -46,11 +46,11 @@
 							<li><a href="#">GR</a></li>
 							<li><a href="#">ES</a></li>
 						</ul>
-					</div>
+					</div>-->
 					<div id="weather"></div>
 					<div class="searchNlogin">
 						<ul>
-							<li class="search-icon"><i class="fa fa-search"></i></li>
+							<!--<li class="search-icon"><i class="fa fa-search"></i></li>-->
 							<li ><a href="<?php echo site_url('users/login'); ?>"><i class="fa fa-user"></i></a></li>
 						</ul>
 						<div class="search">
@@ -75,7 +75,7 @@
 							</button>
 
 							<a class="navbar-brand" href="<?php echo site_url('news/index'); ?>">
-								<img class="main-logo" src="<?php echo base_url(); ?>assets/news/images/presets/preset1/logo.png" alt="logo">
+								<img class="main-logo" src="<?php echo base_url(); ?>assets/news/images/presets/preset1/truenews.png" alt="logo">
 							</a>
 						</div>
 					</div>

@@ -16,8 +16,11 @@ class News extends CI_Controller {
 		$data['breaking_news'] = $this->News_model->breaking_news();
 		$data['top_news'] = $this->News_model->get_top_news();
 		$data['national_news'] = $this->News_model->get_national_news();
+		$data['national_feature_news'] = $this->News_model->get_feature_news(8);
 		$data['international_news'] = $this->News_model->get_international_news();
+		$data['international_feature_news'] = $this->News_model->get_feature_news(9);
 		$data['sports_news'] = $this->News_model->get_sports_news();
+		$data['sports_feature_news'] = $this->News_model->get_feature_news(10);
 		$this->load->view('news/header', $data);
 		$this->load->view('news/index', $data);
 		$this->load->view('news/footer');
@@ -45,6 +48,7 @@ class News extends CI_Controller {
 		$category_id = $this->uri->segment(3, 0);
 		$data['categories'] = $this->Dashboard_model->get_category_list();
 		$data['news'] = $this->News_model->get_news_by_category($category_id);
+		$data['feature_news'] = $this->News_model->get_feature_news($category_id);
 		$this->load->view('news/header', $data);
 		$this->load->view('news/news_category', $data);
 		$this->load->view('news/footer');

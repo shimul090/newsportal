@@ -28,14 +28,17 @@ class News_model extends CI_Model {
 		return $this->db->get()->result_array();
 	}
 
-	public function feature_news() {
-		$this->db->select('*');
+	public function get_feature_news($category_id = '') {
+		$this->db->select('news.id, category_name, title, description, image, image_caption, created_at');
 		$this->db->from('news');
+		$this->db->join('truenews_category', 'news.category = truenews_category.id');
+		$this->db->where('news.category', $category_id);
 		$this->db->where('is_feature', 1);
 		$this->db->where('is_active = 1');
 		$this->db->order_by('id', 'DESC');
+		$this->db->limit(1);
 
-		return $this->db->get()->result_array();
+		return $this->db->get()->row_array();
 	}
 
 	public function breaking_news() {
